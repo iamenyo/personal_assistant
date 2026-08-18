@@ -10,3 +10,5 @@ def speak():
     engine.say("Hi Enk! what can i do for you")
     engine.runAndWait()
 
+
+speak()
