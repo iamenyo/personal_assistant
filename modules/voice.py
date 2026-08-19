@@ -1,7 +1,7 @@
 import pyttsx3
-from modules.speech import listen, text
+from modules.speech import listen
 
-listen()
+text = listen()
 
 engine = pyttsx3.init()
 
