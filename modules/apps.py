@@ -18,3 +18,15 @@ APP_PATHS = [
         "path": r"C:\Program Files\Epic Games\Launcher\Binaries\Win32\EpicGamesLauncher.exe"
     }
 ]
+
+
+def open_app(app_name):
+    app_name = app_name.lower()
+    for app in APP_PATHS:
+        if app_name in app["names"]:
+            if app["names"][0] == "discord":
+                os.startfile(app["path"], arguments="--processStart Discord.exe")
+            else:
+                os.startfile(app["path"])
+            return True
+    return False
