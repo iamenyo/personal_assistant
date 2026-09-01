@@ -9,6 +9,6 @@ def listen():
         audio_text = r.listen(source)
         print("Working")
 
-    text = r.recognize_google(audio_text)
+    text = r.recognize_google(audio_text, language="fr-FR")
     return text
 
