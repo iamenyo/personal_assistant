@@ -1,0 +1,246 @@
+# 🚀 Feuille de Route des Fonctionnalités de Lumin
+
+## 🟢 Niveau 1 : Fonctionnalités de base
+
+**Objectif :** Mettre en place la boucle fondamentale de l’assistant (écoute → compréhension → action → réponse vocale).
+
+### 1. Date et heure
+**Exemples de commandes**
+- « Quelle heure est-il ? »
+- « Quelle est la date d’aujourd’hui ? »
+
+**Modules**
+- `datetime`
+
+---
+
+### 2. Ouvrir et fermer des applications
+**Exemples de commandes**
+- « Ouvre Discord »
+- « Lance VS Code »
+- « Ferme Chrome »
+
+**Outils**
+- `os.startfile()`
+- `subprocess`
+- `taskkill` (Windows)
+
+---
+
+### 3. Ouvrir des sites web
+**Exemples de commandes**
+- « Ouvre YouTube »
+- « Ouvre Gmail »
+
+**Module**
+- `webbrowser.open()`
+
+---
+
+### 4. Recherche Google
+**Exemples de commandes**
+- « Cherche Python sur Google »
+- « Recherche les actualités sur l’IA »
+
+**Outils**
+- `webbrowser`
+- URL de recherche Google
+
+---
+
+### 5. Blagues et citations aléatoires
+**Exemples de commandes**
+- « Raconte-moi une blague »
+- « Donne-moi une citation »
+
+**Modules**
+- `random`
+
+**Intérêt**
+- Fonction idéale pour tester l’ensemble du pipeline :
+  **Voix → Traitement → Action → Réponse vocale**
+
+---
+
+### 6. Contrôle du volume système
+**Exemples de commandes**
+- « Augmente le volume »
+- « Baisse le volume »
+- « Coupe le son »
+
+**Bibliothèque**
+- `pycaw` (Windows)
+
+---
+
+### 7. Capture d’écran
+**Exemples de commandes**
+- « Fais une capture d’écran »
+
+**Bibliothèques**
+- `pyautogui`
+- `PIL.ImageGrab`
+
+---
+
+## 🟡 Niveau 2 : Fonctionnalités utiles au quotidien
+
+**Objectif :** Transformer Lumin en véritable assistant personnel.
+
+### 1. Météo
+**Exemples de commandes**
+- « Quel temps fait-il aujourd’hui ? »
+- « Va-t-il pleuvoir demain ? »
+
+**Outils**
+- API OpenWeatherMap
+- Traitement JSON
+
+**Compétences acquises**
+- Gestion des clés API
+- Requêtes HTTP
+- Manipulation de données JSON
+
+---
+
+### 2. Minuteurs et rappels
+**Exemples de commandes**
+- « Mets un minuteur de 5 minutes »
+- « Rappelle-moi de boire de l’eau dans 30 minutes »
+
+**Modules**
+- `threading`
+- `time`
+
+---
+
+### 3. Notes vocales
+**Exemples de commandes**
+- « Prends une note »
+- « Enregistre cette idée »
+
+**Fonctionnalités**
+- Dictée vocale
+- Sauvegarde dans un fichier `.txt`
+- Ajout automatique de la date et de l’heure
+
+---
+
+### 4. Calculatrice vocale
+**Exemples de commandes**
+- « Combien font 12 fois 8 ? »
+- « Calcule 125 divisé par 5 »
+
+**Approche**
+- Analyse de la commande vocale
+- Évaluation sécurisée des expressions mathématiques
+
+---
+
+### 5. Gestion du presse-papiers
+**Exemples de commandes**
+- « Copie ce texte »
+- « Mets ceci dans le presse-papiers »
+
+**Bibliothèque**
+- `pyperclip`
+
+**Utilité**
+- Dicter du texte puis le coller dans n’importe quelle application.
+
+---
+
+## 🔵 Niveau 3 : Fonctionnalités IA (Préparation à Gemini)
+
+**Objectif :** Ajouter des capacités d’intelligence artificielle à Lumin.
+
+### 1. Conversation avec Gemini
+**Exemples de commandes**
+- « Explique-moi les fonctions récursives »
+- « Qu’est-ce que le machine learning ? »
+
+**Objectif**
+- Vérifier la connexion à l’API Gemini
+- Envoyer des questions et lire les réponses
+
+---
+
+### 2. Résumé de texte
+**Exemples de commandes**
+- « Résume ce texte »
+- « Fais un résumé en 5 points »
+
+**Dépendance**
+- Gemini
+
+---
+
+### 3. Traduction
+**Exemples de commandes**
+- « Traduis ceci en anglais »
+- « Traduis ce texte en français »
+
+**Dépendance**
+- Gemini
+
+---
+
+### 4. Mode Jeu (Game Mode)
+**Exemple de commande**
+- « Active le mode jeu »
+
+**Actions possibles**
+- Ouvrir Discord
+- Ouvrir Steam
+- Fermer les applications inutiles
+- Ajuster le volume
+- Activer un mode concentration
+
+**Objectif**
+- Première fonctionnalité complexe combinant plusieurs commandes déjà développées.
+
+---
+
+# ✅ Ordre de développement recommandé
+
+### Phase 1 : Fondations
+1. Date et heure
+2. Ouvrir/Fermer des applications
+3. Ouvrir des sites web
+4. Recherche Google
+5. Blagues et citations
+
+### Phase 2 : Interaction système
+6. Capture d’écran
+7. Contrôle du volume
+
+### Phase 3 : Assistant personnel
+8. Météo
+9. Minuteurs et rappels
+10. Notes vocales
+11. Calculatrice vocale
+12. Presse-papiers
+
+### Phase 4 : Intelligence artificielle
+13. Intégration Gemini
+14. Résumé de texte
+15. Traduction
+
+### Phase 5 : Fonctionnalités avancées
+16. Mode Jeu
+
+---
+
+## 🎯 Objectif V1 de Lumin
+
+Une première version utilisable de Lumin doit être capable de :
+
+- Donner la date et l’heure
+- Ouvrir et fermer des applications
+- Ouvrir des sites web
+- Effectuer une recherche Google
+- Raconter une blague ou une citation
+- Prendre des captures d’écran
+- Contrôler le volume système
+
+Une fois cette V1 stable, l’intégration de Gemini pourra commencer.
