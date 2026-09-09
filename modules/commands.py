@@ -1,6 +1,7 @@
 from datetime import datetime
 from modules.voice import speak
 from modules.apps import open_app, close_app
+from modules.web import open_website
 
 
 def tell_date(text):
@@ -9,15 +10,17 @@ def tell_date(text):
 
 
 def open_app_command(text):
-    for trigger in ["ouvre", "lance", "open", "start"]:
+    for trigger in ["ouvre", "lance", "allume"]:
         if trigger in text:
-            app_name = text.replace(trigger, "").strip()
+            name = text.replace(trigger, "").strip()
             break
-    else:
-        app_name = text
+        else:
+            name = text
 
-    if open_app(app_name):
-        speak(f"Ouverture de {app_name}")
+    if open_app(name):
+        speak(f"Ouverture de {name}")
+    elif open_website(name):
+        speak(f"Ouverture de {name}")
     else:
         speak("Je ne connais pas cette application")
 
@@ -35,7 +38,6 @@ def close_app_command(text):
     else:
         speak("Je ne connais pas cette application")
 
-
 COMMANDS = [
     {
         "keywords": ["date", "quel jour", "on est quel jour"],
@@ -48,6 +50,10 @@ COMMANDS = [
     {
         "keywords": ["ferme", "quitte", "close", "exit"],
         "action": close_app_command
+    },
+    {
+        "keywords": ["ouvre", "visite", "open website", "open site", "go to", "navigate to", "open"],
+        "action": open_app_command
     }
 ]
 
